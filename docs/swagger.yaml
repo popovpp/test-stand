@@ -1,0 +1,62 @@
+basePath: /
+definitions:
+  main.HTTPError:
+    properties:
+      message:
+        type: string
+      status:
+        type: string
+    type: object
+  main.Item:
+    properties:
+      id:
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact:
+    email: fiber@swagger.io
+    name: API Support
+  description: This is a sample swagger for Fiber
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Fiber Example API
+  version: "1.0"
+paths:
+  /item/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get an item by its ID
+      operationId: get-item-by-int
+      parameters:
+      - description: Item ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Item'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/main.HTTPError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/main.HTTPError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/main.HTTPError'
+      summary: Get an item
+      tags:
+      - Item
+swagger: "2.0"
