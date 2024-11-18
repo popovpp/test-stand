@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample swagger for Fiber",
-        "title": "Fiber Example API",
+        "description": "This is Open API documentations for Mobile app test API",
+        "title": "Mobile application test API",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "name": "API Support",
