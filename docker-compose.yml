@@ -12,10 +12,6 @@ services:
       context: ./
     privileged: true
     network_mode: "host"
-    environment:
-      LD_LIBRARY_PATH: /usr/lib
-    # env_file:
-    #  - .env
     restart: on-failure
     # command: bash -c "uvicorn main:app --host 0.0.0.0 --port 8080"
     # command: bash -c './main'

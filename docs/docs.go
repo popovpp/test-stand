@@ -50,25 +50,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Item"
+                            "$ref": "#/definitions/schemas.Item"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/main.HTTPError"
+                            "$ref": "#/definitions/schemas.HTTPError"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/main.HTTPError"
+                            "$ref": "#/definitions/schemas.HTTPError"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/main.HTTPError"
+                            "$ref": "#/definitions/schemas.HTTPError"
                         }
                     }
                 }
@@ -76,7 +76,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "main.HTTPError": {
+        "schemas.HTTPError": {
             "type": "object",
             "properties": {
                 "message": {
@@ -87,7 +87,7 @@ const docTemplate = `{
                 }
             }
         },
-        "main.Item": {
+        "schemas.Item": {
             "type": "object",
             "properties": {
                 "id": {

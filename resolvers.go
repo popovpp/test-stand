@@ -1,6 +1,8 @@
 package main
 
 import (
+	"test-stand/schemas"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -12,23 +14,14 @@ import (
 // @Produce  json
 // @Tags Item
 // @Param id path int true "Item ID"
-// @Success 200 {object} Item
-// @Failure 400 {object} HTTPError
-// @Failure 404 {object} HTTPError
-// @Failure 500 {object} HTTPError
+// @Success 200 {object} schemas.Item
+// @Failure 400 {object} schemas.HTTPError
+// @Failure 404 {object} schemas.HTTPError
+// @Failure 500 {object} schemas.HTTPError
 // @Router /item/{id} [get]
 func GetItem(c *fiber.Ctx) error {
 	// Create new Item and returns it
-	return c.JSON(Item{
+	return c.JSON(schemas.Item{
 		Id: c.Params("id"),
 	})
-}
-
-type Item struct {
-	Id string
-}
-
-type HTTPError struct {
-	Status  string
-	Message string
 }
