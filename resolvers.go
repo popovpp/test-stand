@@ -3,6 +3,8 @@ package main
 import (
 	"test-stand/schemas"
 
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -24,4 +26,16 @@ func GetItem(c *fiber.Ctx) error {
 	return c.JSON(schemas.Item{
 		Id: c.Params("id"),
 	})
+}
+
+// RenderForm renders the HTML form.
+func RenderForm(c *fiber.Ctx) error {
+	return c.Render("form", fiber.Map{})
+}
+
+// ProcessForm processes the form submission.
+func ProcessForm(c *fiber.Ctx) error {
+	name := c.FormValue("name")
+	greeting := fmt.Sprintf("Hello, %s!", name)
+	return c.Render("greeting", fiber.Map{"Greeting": greeting})
 }
