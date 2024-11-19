@@ -1,13 +1,13 @@
 basePath: /
 definitions:
-  main.HTTPError:
+  schemas.HTTPError:
     properties:
       message:
         type: string
       status:
         type: string
     type: object
-  main.Item:
+  schemas.Item:
     properties:
       id:
         type: string
@@ -17,12 +17,12 @@ info:
   contact:
     email: fiber@swagger.io
     name: API Support
-  description: This is a sample swagger for Fiber
+  description: This is Open API documentations for Mobile app test API
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://swagger.io/terms/
-  title: Fiber Example API
+  title: Mobile application test API
   version: "1.0"
 paths:
   /item/{id}:
@@ -43,19 +43,19 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.Item'
+            $ref: '#/definitions/schemas.Item'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/main.HTTPError'
+            $ref: '#/definitions/schemas.HTTPError'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/main.HTTPError'
+            $ref: '#/definitions/schemas.HTTPError'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/main.HTTPError'
+            $ref: '#/definitions/schemas.HTTPError'
       summary: Get an item
       tags:
       - Item

@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  local_rabbitmq:
+    image: rabbitmq:3-management
+    network_mode: "host"
+    restart: unless-stopped
+    ports:
+      - "15672:15672" # RabbitMQ Management UI
+      - "5672:5672" # RabbitMQ Messaging Port
+  test-stand:
+    build:
+      context: ./
+    privileged: true
+    network_mode: "host"
+    restart: on-failure
+    # command: bash -c "uvicorn main:app --host 0.0.0.0 --port 8080"
+    # command: bash -c './main'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./temp:/test-stand/temp
+    ports:
+      - "8080:8080"
+volumes:
+  agb_data:

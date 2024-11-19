@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample swagger for Fiber",
-        "title": "Fiber Example API",
+        "description": "This is Open API documentations for Mobile app test API",
+        "title": "Mobile application test API",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "name": "API Support",
@@ -44,25 +44,25 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Item"
+                            "$ref": "#/definitions/schemas.Item"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/main.HTTPError"
+                            "$ref": "#/definitions/schemas.HTTPError"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/main.HTTPError"
+                            "$ref": "#/definitions/schemas.HTTPError"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/main.HTTPError"
+                            "$ref": "#/definitions/schemas.HTTPError"
                         }
                     }
                 }
@@ -70,7 +70,7 @@
         }
     },
     "definitions": {
-        "main.HTTPError": {
+        "schemas.HTTPError": {
             "type": "object",
             "properties": {
                 "message": {
@@ -81,7 +81,7 @@
                 }
             }
         },
-        "main.Item": {
+        "schemas.Item": {
             "type": "object",
             "properties": {
                 "id": {
